@@ -1,0 +1,611 @@
+{
+   "Positioner": {}, 
+   "Potentiometer": {}, 
+   "Led": {
+      "LedAddTrack": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedMix": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedAccent": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedFixedLength": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedPlay": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedSession": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedSetup": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedMute": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedUndo": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedStopClip": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedBrowse": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedRepeat": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedSolo": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedRightArrow": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedShift": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedAddDevice": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnSilLed": {
+         "Dimension": [
+            8, 
+            8
+         ]
+      }, 
+      "LedScale": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedMetronome": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedDelete": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedNote": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedTapTempo": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedDownArrow": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedSel": {
+         "Dimension": [
+            8, 
+            1
+         ]
+      }, 
+      "LedOctaveDown": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedMaster": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedPageLeft": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedRecord": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedConvert": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedLayout": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedDuplicate": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedNew": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedQuantize": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedAutomate": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedSelect": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedPageRight": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedUser": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedOctaveUp": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedT": {
+         "Dimension": [
+            8, 
+            1
+         ]
+      }, 
+      "TouchSurfaceLed": {
+         "Dimension": [
+            31, 
+            1
+         ]
+      }, 
+      "LedUpArrow": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedLeftArrow": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedB": {
+         "Dimension": [
+            8, 
+            1
+         ]
+      }, 
+      "LedDevice": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedClip": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "LedDoubleLoop": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }
+   }, 
+   "Button3d": {
+      "BtnSil": {
+         "Resolution": {
+            "Velocity": 128, 
+            "Pressure": 0
+         }, 
+         "Dimension": [
+            8, 
+            8
+         ]
+      }
+   }, 
+   "Button": {
+      "BtnLayout": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnScale": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnSession": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnQuantize": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnNote": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnMute": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnUser": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnDoubleLoop": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnStopClip": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnLeftArrow": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnPageLeft": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnMetronome": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnSelect": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnMix": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnB": {
+         "Dimension": [
+            8, 
+            1
+         ]
+      }, 
+      "BtnDuplicate": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnPageRight": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnT": {
+         "Dimension": [
+            8, 
+            1
+         ]
+      }, 
+      "BtnPlay": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnAccent": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnShift": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnSetup": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnUpArrow": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnFixedLength": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnSolo": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnTapTempo": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnDevice": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnSel": {
+         "Dimension": [
+            8, 
+            1
+         ]
+      }, 
+      "BtnAddDevice": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnAutomate": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnOctaveDown": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnUndo": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnConvert": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnOctaveUp": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnRightArrow": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnDelete": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnMaster": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnNew": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnAddTrack": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnRecord": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnRepeat": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnDownArrow": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnClip": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "BtnBrowse": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }
+   }, 
+   "Encoder": {
+      "EncoderMain": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "EncoderMetronome": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "EncoderTempo": {
+         "Dimension": [
+            1, 
+            1
+         ]
+      }, 
+      "Encoder": {
+         "Dimension": [
+            8, 
+            1
+         ]
+      }
+   }, 
+   "TouchSurface": {
+      "TouchStrip": {
+         "Resolution": [
+            16384, 
+            0
+         ], 
+         "Dimension": [
+            1, 
+            1
+         ]
+      }
+   }, 
+   "Display": {
+      "Display": {
+         "Resolution": [
+            960, 
+            160
+         ], 
+         "Dimension": [
+            1, 
+            1
+         ]
+      }
+   }, 
+   "Button5d": {}
+}

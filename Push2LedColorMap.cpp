@@ -20,6 +20,7 @@ bool LedColorMap::add(uint8_t index, uint8_t r, uint8_t g, uint8_t b, uint8_t w)
     m_data[index].g = g;
     m_data[index].b = b;
     m_data[index].w = w;
+    return true;
 }
 
 const LedColorMap::Data& LedColorMap::get(uint8_t index) const

@@ -390,19 +390,19 @@ void Midi1InputCallback::onPitchBend(double timestamp, const midi::InputMessage<
     }
     m_rTouch.checkValuesAndInvokeCallbacks(w);
 }
-
+#include <iomanip>
 void Midi1InputCallback::onSystemExclusive(double timestamp, const std::vector<uint8_t>& msg)
 {
     
     // Debug print
-    /*
+    
     std::cout << "Incoming Sysex: ";
     for(auto& entry : msg)
     {
         std::cout << std::hex <<  std::setfill('0') << std::setw(2) << static_cast<int>(entry) << " ";
     }
     std::cout << std::endl;
-    */
+    
     static const uint8_t SYSEX_CMD_INDEX = 6;
     static const uint8_t SYSEX_CMD__GET_COLOR_PALETTE = 0x04;
     if((SYSEX_CMD_INDEX + 1) > msg.size())

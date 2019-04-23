@@ -1,6 +1,7 @@
 #include "Push2Midi1InputCallback.h"
 #include "Push2LedColorMap.h"
 #include <iostream>
+#include <chrono>
 
 using namespace Push2;
 
@@ -390,19 +391,21 @@ void Midi1InputCallback::onPitchBend(double timestamp, const midi::InputMessage<
     }
     m_rTouch.checkValuesAndInvokeCallbacks(w);
 }
+/*
 #include <iomanip>
+*/
 void Midi1InputCallback::onSystemExclusive(double timestamp, const std::vector<uint8_t>& msg)
 {
     
     // Debug print
-    
+    /*
     std::cout << "Incoming Sysex: ";
     for(auto& entry : msg)
     {
         std::cout << std::hex <<  std::setfill('0') << std::setw(2) << static_cast<int>(entry) << " ";
     }
     std::cout << std::endl;
-    
+    */
     static const uint8_t SYSEX_CMD_INDEX = 6;
     static const uint8_t SYSEX_CMD__GET_COLOR_PALETTE = 0x04;
     if((SYSEX_CMD_INDEX + 1) > msg.size())
@@ -434,6 +437,12 @@ void Midi1InputCallback::onSystemExclusive(double timestamp, const std::vector<u
                                (msg[COLORMAP_GREEN_LSB] & 0x7f) + ( (msg[COLORMAP_GREEN_MSB]& 0x01) << 7),
                                (msg[COLORMAP_BLUE_LSB] & 0x7f)  + ( (msg[COLORMAP_BLUE_MSB]& 0x01) << 7),
                                (msg[COLORMAP_WHITE_LSB] & 0x7f) + ( (msg[COLORMAP_WHITE_MSB]& 0x01) << 7));
+            if(0x7f == msg[COLORMAP_INDEX])
+            {
+                std::unique_lock<std::mutex> lock(m_mutex);
+                m_hasReceivedSysexAnswers = true;
+                m_condVar.notify_all();
+            }
             break;
         }
     }
@@ -528,3 +537,10 @@ void Midi1InputCallback::handleNote(double timestamp, uint8_t noteNumber, uint8_
         m_rButton3d.checkValuesAndInvokeCallbacks(w);
     }
 }
+
+bool Midi1InputCallback::waitUntilSysexAnswersReceived(uint32_t timeoutMs)
+{
+    std::unique_lock<std::mutex> lock(m_mutex);
+    return m_condVar.wait_for(lock, std::chrono::milliseconds(timeoutMs),
+                                [this](){return m_hasReceivedSysexAnswers;});
+} 

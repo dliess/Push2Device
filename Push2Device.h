@@ -53,6 +53,7 @@ public:
     Push2Device(midi::PortNotifier<midi::InputPortListProvider>&   rInputPortNotifier,
                 midi::PortNotifier<midi::OutputPortListProvider>&  rOutputPortNotifier);
     ~Push2Device();  // makes std::unique_ptr happy
+    bool init(uint32_t timeoutMs);
     virtual void registerCB(typename fp::Button::CallbackIf& cb, const fp::Widget& w) override;
     virtual void registerCB(typename fp::Button3d::CallbackIf& cb, const fp::Widget& w) override;
     virtual void registerCB(typename fp::Encoder::CallbackIf& cb, const fp::Widget& w) override;

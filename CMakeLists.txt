@@ -23,7 +23,6 @@ find_package(libusb-1.0 REQUIRED)
 
 add_library(Push2Device STATIC
     "Push2Device.cpp"
-    "Push2DeviceCompl.cpp"
     "Push2DisplayRenderer.cpp"
     "Push2UsbDisplay.cpp"
     "Push2LedColorMap.cpp"

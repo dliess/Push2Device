@@ -1,8 +1,6 @@
 #ifndef PUSH_2_DRIVER_H
 #define PUSH_2_DRIVER_H
 
-#include "UsbMidiInputPortListProvider.h"
-#include "UsbMidiOutputPortListProvider.h"
 #include "UsbMidiPortNotifier.h"
 #include "Push2LedColorMap.h"
 #include "FpButton.h"
@@ -50,8 +48,7 @@ class Push2Device : public fp::Button::IProvider,
                     public fp::Led::ISetter
 {
 public:
-    Push2Device(midi::PortNotifier<midi::InputPortListProvider>&   rInputPortNotifier,
-                midi::PortNotifier<midi::OutputPortListProvider>&  rOutputPortNotifier);
+    Push2Device();
     ~Push2Device();  // makes std::unique_ptr happy
     virtual void registerCB(typename fp::Button::CallbackIf& cb, const fp::Widget& w) override;
     virtual void registerCB(typename fp::Button3d::CallbackIf& cb, const fp::Widget& w) override;

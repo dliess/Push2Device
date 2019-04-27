@@ -78,6 +78,10 @@ Push2Device::~Push2Device()
     // makes std::unique_ptr happy 
 }
 
+bool Push2Device::init(uint32_t timeoutMs)
+{
+    return m_pInputCallback->waitUntilSysexAnswersReceived(timeoutMs);
+}
 
 fp::IRenderMedium* Push2Device::getRenderMedium(const fp::Widget& w)
 {

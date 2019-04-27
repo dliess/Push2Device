@@ -3,6 +3,8 @@
 
 #include "IMidi1InputCallback.h"
 #include "Push2Device.h"
+#include <condition_variable>
+#include <mutex>
 
 class LedColorMap;
 
@@ -24,6 +26,7 @@ public:
     void onPitchBend(double timestamp, const midi::InputMessage<midi::PitchBend>& msg) override;
     void onSystemExclusive(double timestamp, const std::vector<uint8_t>& msg) override;
 
+    bool waitUntilSysexAnswersReceived(uint32_t timeoutMs); 
 private:
     Push2Device::EncoderLayer      &m_rEncoder;
     Push2Device::ButtonLayer       &m_rButton;
@@ -33,6 +36,10 @@ private:
     void setEncoderByCCVal(const fp::Widget& w, uint8_t ccVal);
     void setButtonByCCVal(const fp::Widget& w, uint8_t ccVal);
     void handleNote(double timestamp, uint8_t noteNumber, uint8_t velocity, bool pressed);
+
+    bool m_hasReceivedSysexAnswers{false};
+    std::mutex m_mutex;
+    std::condition_variable m_condVar;
 };
 
 } // namespace Push2

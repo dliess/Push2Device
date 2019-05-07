@@ -18,17 +18,17 @@ Midi1InputCallback::Midi1InputCallback(Push2Device::EncoderLayer&      rEncoder,
 {}
 
 
-void Midi1InputCallback::onNoteOff(double timestamp, const midi::InputMessage<midi::NoteOff>& msg)
+void Midi1InputCallback::onNoteOff(double timestamp, const midi::Message<midi::NoteOff>& msg)
 {
     handleNote(timestamp, msg.noteNumber(), msg.velocity(), false);
 }
 
-void Midi1InputCallback::onNoteOn(double timestamp, const midi::InputMessage<midi::NoteOn>& msg)
+void Midi1InputCallback::onNoteOn(double timestamp, const midi::Message<midi::NoteOn>& msg)
 {
     handleNote(timestamp, msg.noteNumber(), msg.velocity(), true);
 }
 
-void Midi1InputCallback::onControlChange(double timestamp, const midi::InputMessage<midi::ControlChange>& msg)
+void Midi1InputCallback::onControlChange(double timestamp, const midi::Message<midi::ControlChange>& msg)
 {
     switch(msg.controllerNumber())
     {
@@ -359,7 +359,7 @@ void Midi1InputCallback::onControlChange(double timestamp, const midi::InputMess
     }
 }
 
-void Midi1InputCallback::onAfterTouchPoly(double timestamp, const midi::InputMessage<midi::AfterTouchPoly>& msg)
+void Midi1InputCallback::onAfterTouchPoly(double timestamp, const midi::Message<midi::AfterTouchPoly>& msg)
 {
     static const uint8_t BtnMatrixStartMidiNoteNmbr = 36;
     static const uint8_t BtnMatrixEndMidiNoteNmbr = 99;
@@ -379,7 +379,7 @@ void Midi1InputCallback::onAfterTouchPoly(double timestamp, const midi::InputMes
     }
 }
 
-void Midi1InputCallback::onPitchBend(double timestamp, const midi::InputMessage<midi::PitchBend>& msg)
+void Midi1InputCallback::onPitchBend(double timestamp, const midi::Message<midi::PitchBend>& msg)
 {
     const auto id = fp::Push2Topology::TouchSurface::eTouchStrip;
     const fp::Widget w(id);

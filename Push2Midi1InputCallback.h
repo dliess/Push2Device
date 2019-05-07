@@ -19,11 +19,11 @@ public:
                        Push2Device::Button3dLayer&     rButton3d,
                        Push2Device::TouchSurfaceLayer& rTouch,
                        LedColorMap&                    rLedColormap);
-    void onNoteOff(double timestamp, const midi::InputMessage<midi::NoteOff>& msg) override;
-    void onNoteOn(double timestamp, const midi::InputMessage<midi::NoteOn>& msg) override;
-    void onControlChange(double timestamp, const midi::InputMessage<midi::ControlChange>& msg) override;
-    void onAfterTouchPoly(double timestamp, const midi::InputMessage<midi::AfterTouchPoly>& msg) override;
-    void onPitchBend(double timestamp, const midi::InputMessage<midi::PitchBend>& msg) override;
+    void onNoteOff(double timestamp, const midi::Message<midi::NoteOff>& msg) override;
+    void onNoteOn(double timestamp, const midi::Message<midi::NoteOn>& msg) override;
+    void onControlChange(double timestamp, const midi::Message<midi::ControlChange>& msg) override;
+    void onAfterTouchPoly(double timestamp, const midi::Message<midi::AfterTouchPoly>& msg) override;
+    void onPitchBend(double timestamp, const midi::Message<midi::PitchBend>& msg) override;
     void onSystemExclusive(double timestamp, const std::vector<uint8_t>& msg) override;
 
     bool waitUntilSysexAnswersReceived(uint32_t timeoutMs); 

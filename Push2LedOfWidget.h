@@ -4,7 +4,7 @@
 #include "FpWidget.h"
 #include "Push2Topology.h"
 
-namespace Push2
+namespace push2
 {
 
 inline
@@ -17,6 +17,8 @@ fp::Widget getLedOfButton(const fp::Widget& btn)
         case fp::Push2Topology::Button::eBtnSel: return fp::Widget(fp::Push2Topology::Led::eLedSel, btn.coord);
         case fp::Push2Topology::Button::eBtnT: return fp::Widget(fp::Push2Topology::Led::eLedT, btn.coord);
         case fp::Push2Topology::Button::eBtnB: return fp::Widget(fp::Push2Topology::Led::eLedB, btn.coord);
+        case fp::Push2Topology::Button::eBtnScale: return fp::Widget(fp::Push2Topology::Led::eLedScale, btn.coord);
+        case fp::Push2Topology::Button::eBtnDevice: return fp::Widget(fp::Push2Topology::Led::eLedDevice, btn.coord);
         default: return fp::Widget(-1, {0,0});
     }
 }

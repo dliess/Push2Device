@@ -56,6 +56,11 @@ public:
     virtual void registerCB(typename fp::Encoder::CallbackIf& cb, const fp::Widget& w) override;
     virtual void registerCB(typename fp::TouchSurface::CallbackIf& cb, const fp::Widget& w) override;
 
+    virtual void unRegisterCB(typename fp::Button::CallbackIf& cb, const fp::Widget& w) override;
+    virtual void unRegisterCB(typename fp::Button3d::CallbackIf& cb, const fp::Widget& w) override;
+    virtual void unRegisterCB(typename fp::Encoder::CallbackIf& cb, const fp::Widget& w) override;
+    virtual void unRegisterCB(typename fp::TouchSurface::CallbackIf& cb, const fp::Widget& w) override;
+
     void setLed(const fp::Widget& w, const fp::Led::ColorRGB& colorRGB) override;
 
     using DisplayTopology = typename fp::Push2Topology::Display;

@@ -108,6 +108,26 @@ void Push2Device::registerCB(typename fp::TouchSurface::CallbackIf& cb, const fp
     m_touchSurfaceLayer.registerCB(cb, w);
 }
 
+void Push2Device::unRegisterCB(typename fp::Button::CallbackIf& cb, const fp::Widget& w)
+{
+    m_buttonLayer.unRegisterCB(cb, w);
+}
+
+void Push2Device::unRegisterCB(typename fp::Button3d::CallbackIf& cb, const fp::Widget& w)
+{
+    m_button3dLayer.unRegisterCB(cb, w);
+}
+
+void Push2Device::unRegisterCB(typename fp::Encoder::CallbackIf& cb, const fp::Widget& w)
+{
+    m_encoderLayer.unRegisterCB(cb, w);
+}
+
+void Push2Device::unRegisterCB(typename fp::TouchSurface::CallbackIf& cb, const fp::Widget& w)
+{
+    m_touchSurfaceLayer.unRegisterCB(cb, w);
+}
+
 void Push2Device::setLed(const fp::Widget& widget, const fp::Led::ColorRGB& rgb)
 {
     if(fp::Push2Topology::Led::eBtnSilLed == widget.id)

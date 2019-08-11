@@ -3,7 +3,7 @@
 
 #include <cstdint>
 
-namespace Push2
+namespace push2device
 {
 
 class LedColorMap
@@ -26,5 +26,5 @@ private:
     static Data invalidInstance;
 };
 
-} // namespace Push2
+} // namespace push2device
 #endif

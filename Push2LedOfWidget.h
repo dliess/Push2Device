@@ -35,5 +35,5 @@ fp::Widget getLedOfButton3d(const fp::Widget& btn)
     }
 }
 
-} // namespace Push2
+} // namespace push2device
 #endif

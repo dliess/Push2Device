@@ -7,7 +7,7 @@
 #include "Push2DisplayRenderer.h"
 #include "FpIRenderMedium.h"
 
-using namespace Push2;
+using namespace push2device;
 
 const std::string Push2Device::PUSH2_USB_MIDI_DEVICE_NAME = "Ableton Push 2:Ableton Push 2 MIDI 1"; 
 

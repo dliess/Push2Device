@@ -2,7 +2,7 @@
 #include "FinalAction.h"
 #include <iostream>
 
-using namespace Push2;
+using namespace push2device;
 
 UsbDisplay::UsbDisplay() :
     m_pContext(nullptr),

@@ -4,7 +4,7 @@
 #include <libusb-1.0/libusb.h>
 #include "FpFrameBuffer.h"
 
-namespace Push2
+namespace push2device
 {
 
 class UsbDisplay

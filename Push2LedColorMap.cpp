@@ -1,6 +1,6 @@
 #include "Push2LedColorMap.h"
 
-using namespace Push2;
+using namespace push2device;
 
 LedColorMap::Data LedColorMap::invalidInstance;
 

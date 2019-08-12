@@ -1,5 +1,5 @@
-#ifndef PUSH_2_DRIVER_H
-#define PUSH_2_DRIVER_H
+#ifndef PUSH_2_DEVICE_H
+#define PUSH_2_DEVICE_H
 
 #include "UsbMidiPortNotifier.h"
 #include "Push2LedColorMap.h"

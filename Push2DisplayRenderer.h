@@ -7,7 +7,7 @@
 #include "FpGfxTypes.h"
 #include <cstdint>
 
-namespace Push2
+namespace push2device
 {
 
 class DisplayRenderer : public fp::RenderBase
@@ -29,5 +29,5 @@ private:
     UsbDisplay            m_usbDisplay;
 };
 
-} // namespace Push2
+} // namespace push2device
 #endif

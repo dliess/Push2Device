@@ -4,7 +4,7 @@
 #include "FpWidget.h"
 #include "Push2Topology.h"
 
-namespace push2
+namespace fp
 {
 
 inline
@@ -36,5 +36,5 @@ fp::Widget getLedOfButton3d(const fp::Widget& btn)
     }
 }
 
-} // namespace Push2
+} // namespace fp
 #endif

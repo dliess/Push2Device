@@ -1,5 +1,5 @@
-#ifndef PUSH_2_DRIVER_H
-#define PUSH_2_DRIVER_H
+#ifndef PUSH_2_DEVICE_H
+#define PUSH_2_DEVICE_H
 
 #include "UsbMidiPortNotifier.h"
 #include "Push2LedColorMap.h"
@@ -29,16 +29,16 @@ namespace fp
     class IRenderMedium;
 }
 
-namespace Push2
+namespace push2device
 {
     class Midi1InputCallback;
 }
-namespace Push2
+namespace push2device
 {
     class DisplayRenderer;
 }
 
-namespace Push2
+namespace push2device
 {
 
 class Push2Device : public fp::Button::IProvider,
@@ -97,5 +97,5 @@ private:
     void setTouchStripConfiguration();
 };
 
-} // namespace Push2
+} // namespace push2device
 #endif

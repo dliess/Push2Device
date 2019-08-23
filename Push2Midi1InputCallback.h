@@ -8,7 +8,7 @@
 
 class LedColorMap;
 
-namespace Push2
+namespace push2device
 {
 
 class Midi1InputCallback : public midi::IMidi1InputCallback
@@ -42,5 +42,5 @@ private:
     std::condition_variable m_condVar;
 };
 
-} // namespace Push2
+} // namespace push2device
 #endif

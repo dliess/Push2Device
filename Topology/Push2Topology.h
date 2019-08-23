@@ -35,9 +35,9 @@ struct Potentiometer
 
    using WidgetType = fp::Potentiometer;
 
-   static const Vector2d<uint8_t> &getDim(Id widgetId)
+   static constexpr Vector2d<uint8_t> getDim(Id widgetId)
    {
-      static const Vector2d<uint8_t> dim = {0,0};
+      constexpr Vector2d<uint8_t> dim = {0,0};
       return dim;
    }
 
@@ -155,9 +155,9 @@ struct Led
         }
    }
 
-   static const Vector2d<uint8_t> &getDim(Id widgetId)
+   static constexpr Vector2d<uint8_t> getDim(Id widgetId) noexcept
    {
-      static const Vector2d<uint8_t> dim[Id::eLast + 1] = { {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {8, 1}, {1, 1}, {8, 8}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {8, 1}, {31, 1}, {1, 1}, {1, 1}, {8, 1}, {1, 1}, {1, 1}, {1, 1}} ;
+      constexpr Vector2d<uint8_t> dim[Id::eLast + 1] = { {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {8, 1}, {1, 1}, {8, 8}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {8, 1}, {31, 1}, {1, 1}, {1, 1}, {8, 1}, {1, 1}, {1, 1}, {1, 1}} ;
       return dim[widgetId];
    }
 
@@ -182,9 +182,9 @@ struct Button3d
 
    using WidgetType = fp::Button3d;
 
-   static const Vector2d<uint8_t> &getDim(Id widgetId)
+   static constexpr Vector2d<uint8_t> getDim(Id widgetId)
    {
-      static const Vector2d<uint8_t> dim[Id::eLast + 1] = { {8, 8}} ;
+      constexpr Vector2d<uint8_t> dim[Id::eLast + 1] = { {8, 8}} ;
       return dim[widgetId];
    }
 
@@ -307,9 +307,9 @@ struct Button
 
    using WidgetType = fp::Button;
 
-   static const Vector2d<uint8_t> &getDim(Id widgetId)
+   static constexpr Vector2d<uint8_t> getDim(Id widgetId)
    {
-      static const Vector2d<uint8_t> dim[Id::eLast + 1] = { {1, 1}, {8, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {8, 1}, {1, 1}, {1, 1}, {8, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}} ;
+      constexpr Vector2d<uint8_t> dim[Id::eLast + 1] = { {1, 1}, {8, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {8, 1}, {1, 1}, {1, 1}, {8, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}, {1, 1}} ;
       return dim[widgetId];
    }
 
@@ -332,9 +332,9 @@ struct Display
         }
    }
 
-   static const Vector2d<uint8_t> &getDim(Id widgetId)
+   static constexpr Vector2d<uint8_t> getDim(Id widgetId)
    {
-      static const Vector2d<uint8_t> dim[Id::eLast + 1] = { {1, 1}} ;
+      constexpr Vector2d<uint8_t> dim[Id::eLast + 1] = { {1, 1}} ;
       return dim[widgetId];
    }
 
@@ -370,9 +370,9 @@ struct Encoder
 
    using WidgetType = fp::Encoder;
 
-   static const Vector2d<uint8_t> &getDim(Id widgetId)
+   static constexpr Vector2d<uint8_t> getDim(Id widgetId)
    {
-      static const Vector2d<uint8_t> dim[Id::eLast + 1] = { {1, 1}, {1, 1}, {1, 1}, {8, 1}} ;
+      constexpr Vector2d<uint8_t> dim[Id::eLast + 1] = { {1, 1}, {1, 1}, {1, 1}, {8, 1}} ;
       return dim[widgetId];
    }
 
@@ -393,9 +393,9 @@ struct Positioner
         }
    }
 
-   static const Vector2d<uint8_t> &getDim(Id widgetId)
+   static constexpr Vector2d<uint8_t> getDim(Id widgetId)
    {
-      static const Vector2d<uint8_t> dim = {0,0};
+      constexpr Vector2d<uint8_t> dim = {0,0};
       return dim;
    }
 
@@ -425,9 +425,9 @@ struct TouchSurface
 
    using WidgetType = fp::TouchSurface;
 
-   static const Vector2d<uint8_t> &getDim(Id widgetId)
+   static constexpr Vector2d<uint8_t> getDim(Id widgetId)
    {
-      static const Vector2d<uint8_t> dim[Id::eLast + 1] = { {1, 1}} ;
+      constexpr Vector2d<uint8_t> dim[Id::eLast + 1] = { {1, 1}} ;
       return dim[widgetId];
    }
 
@@ -455,9 +455,9 @@ struct Button5d
 
    using WidgetType = fp::Button5d;
 
-   static const Vector2d<uint8_t> &getDim(Id widgetId)
+   static constexpr Vector2d<uint8_t> getDim(Id widgetId)
    {
-      static const Vector2d<uint8_t> dim = {0,0};
+      constexpr Vector2d<uint8_t> dim = {0,0};
       return dim;
    }
 

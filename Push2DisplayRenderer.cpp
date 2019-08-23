@@ -3,7 +3,7 @@
 #include <cstdlib> //exit
 #include <iostream>
 
-using namespace Push2;
+using namespace push2device;
 
 DisplayRenderer::DisplayRenderer() :
     m_frameBuf({1024, 160})

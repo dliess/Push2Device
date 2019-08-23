@@ -3,7 +3,7 @@
 #include <iostream>
 #include <chrono>
 
-using namespace Push2;
+using namespace push2device;
 
 Midi1InputCallback::Midi1InputCallback(Push2Device::EncoderLayer&      rEncoder,
                                        Push2Device::ButtonLayer&       rButton,

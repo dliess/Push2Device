@@ -21,6 +21,7 @@ fp::Widget getLedOfButton(const fp::Widget& btn)
         case fp::Push2Topology::Button::eBtnDevice: return fp::Widget(fp::Push2Topology::Led::eLedDevice, btn.coord);
         case fp::Push2Topology::Button::eBtnOctaveUp: return fp::Widget(fp::Push2Topology::Led::eLedOctaveUp, btn.coord);
         case fp::Push2Topology::Button::eBtnOctaveDown: return fp::Widget(fp::Push2Topology::Led::eLedOctaveDown, btn.coord);
+        case fp::Push2Topology::Button::eBtnBrowse: return fp::Widget(fp::Push2Topology::Led::eLedBrowse, btn.coord);
         default: return fp::Widget(-1, {0,0});
     }
 }

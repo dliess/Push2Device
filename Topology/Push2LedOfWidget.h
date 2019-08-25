@@ -21,7 +21,18 @@ fp::Widget getLedOfButton(const fp::Widget& btn)
         case fp::Push2Topology::Button::eBtnDevice: return fp::Widget(fp::Push2Topology::Led::eLedDevice, btn.coord);
         case fp::Push2Topology::Button::eBtnOctaveUp: return fp::Widget(fp::Push2Topology::Led::eLedOctaveUp, btn.coord);
         case fp::Push2Topology::Button::eBtnOctaveDown: return fp::Widget(fp::Push2Topology::Led::eLedOctaveDown, btn.coord);
+<<<<<<< Updated upstream
         case fp::Push2Topology::Button::eBtnBrowse: return fp::Widget(fp::Push2Topology::Led::eLedBrowse, btn.coord);
+=======
+<<<<<<< Updated upstream
+=======
+        case fp::Push2Topology::Button::eBtnBrowse: return fp::Widget(fp::Push2Topology::Led::eLedBrowse, btn.coord);
+        case fp::Push2Topology::Button::eBtnLeftArrow: return fp::Widget(fp::Push2Topology::Led::eLedLeftArrow, btn.coord);
+        case fp::Push2Topology::Button::eBtnRightArrow: return fp::Widget(fp::Push2Topology::Led::eLedRightArrow, btn.coord);
+        case fp::Push2Topology::Button::eBtnUpArrow: return fp::Widget(fp::Push2Topology::Led::eLedUpArrow, btn.coord);
+        case fp::Push2Topology::Button::eBtnDownArrow: return fp::Widget(fp::Push2Topology::Led::eLedDownArrow, btn.coord);
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
         default: return fp::Widget(-1, {0,0});
     }
 }

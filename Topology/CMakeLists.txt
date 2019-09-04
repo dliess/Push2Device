@@ -17,4 +17,8 @@ add_custom_target(generateTopologyHeader DEPENDS "${TOPOLOGY_GENERATED_HEADER}" 
 
 add_library(Push2DeviceTopology INTERFACE)
 target_include_directories(Push2DeviceTopology INTERFACE ${CMAKE_CURRENT_LIST_DIR})
+target_link_libraries(Push2DeviceTopology
+    INTERFACE FpBase
+    INTERFACE FpGfx
+)
 #add_dependencies(Push2DeviceTopology generateTopologyHeader)

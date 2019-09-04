@@ -17,10 +17,10 @@ Push2Device::Push2Device() :
     m_pDisplayRenderer(new DisplayRenderer()),
     m_pFrameBufRenderer(new fp::FrameBufRendererMedium<DisplayRenderer>(*m_pDisplayRenderer))
 {
-    midi::PortNotifiers::instance().inputs.registerNewPortCb([this](rtmidiadapt::PortIndex i, const rtmidiadapt::DeviceOnPort& devOnPort){
-        if(PUSH2_USB_MIDI_DEVICE_NAME == devOnPort.getDeviceName())
+    midi::PortNotifiers::instance().inputs.registerNewPortCb([this](rtmidiadapt::PortIndex i, const rtmidiadapt::DeviceOnUsbPort& devOnUsbPort){
+        if(PUSH2_USB_MIDI_DEVICE_NAME == devOnUsbPort.getDeviceName())
         {
-            std::cout << "New input " << i << " : " << devOnPort << std::endl;
+            std::cout << "New input " << i << " : " << devOnUsbPort << std::endl;
             std::unique_ptr<midi::UsbMidiIn> pMidiMedium(new midi::UsbMidiIn);
             if(!pMidiMedium->openPort(i))
             {
@@ -30,17 +30,17 @@ Push2Device::Push2Device() :
             m_pMidiInput->registerMidiInCb(m_pInputCallback.get());
         }
     });
-    midi::PortNotifiers::instance().inputs.registerRemovedPortCb([this](const rtmidiadapt::DeviceOnPort& devOnPort){
-        if(PUSH2_USB_MIDI_DEVICE_NAME == devOnPort.getDeviceName())
+    midi::PortNotifiers::instance().inputs.registerRemovedPortCb([this](const rtmidiadapt::DeviceOnUsbPort& devOnUsbPort){
+        if(PUSH2_USB_MIDI_DEVICE_NAME == devOnUsbPort.getDeviceName())
         {
-            std::cout << "Removed input " << devOnPort << std::endl;
+            std::cout << "Removed input " << devOnUsbPort << std::endl;
             m_pMidiInput.reset();
         }
     });
-    midi::PortNotifiers::instance().outputs.registerNewPortCb([this](rtmidiadapt::PortIndex i, const rtmidiadapt::DeviceOnPort& devOnPort){
-        if(PUSH2_USB_MIDI_DEVICE_NAME == devOnPort.getDeviceName())
+    midi::PortNotifiers::instance().outputs.registerNewPortCb([this](rtmidiadapt::PortIndex i, const rtmidiadapt::DeviceOnUsbPort& devOnUsbPort){
+        if(PUSH2_USB_MIDI_DEVICE_NAME == devOnUsbPort.getDeviceName())
         {
-            std::cout << "New output " << i << " : " << devOnPort << std::endl;
+            std::cout << "New output " << i << " : " << devOnUsbPort << std::endl;
             std::unique_ptr<midi::UsbMidiOut> pMidiMedium(new midi::UsbMidiOut);
             if(!pMidiMedium->openPort(i))
             {
@@ -64,10 +64,10 @@ Push2Device::Push2Device() :
             }
         }
     });
-    midi::PortNotifiers::instance().outputs.registerRemovedPortCb([this](const rtmidiadapt::DeviceOnPort& devOnPort){
-        if(PUSH2_USB_MIDI_DEVICE_NAME == devOnPort.getDeviceName())
+    midi::PortNotifiers::instance().outputs.registerRemovedPortCb([this](const rtmidiadapt::DeviceOnUsbPort& devOnUsbPort){
+        if(PUSH2_USB_MIDI_DEVICE_NAME == devOnUsbPort.getDeviceName())
         {
-            std::cout << "Removed output " << devOnPort << std::endl;
+            std::cout << "Removed output " << devOnUsbPort << std::endl;
             m_pMidiOutput.reset();
         }
     });

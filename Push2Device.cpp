@@ -199,6 +199,15 @@ void Push2Device::setLed(const fp::Widget& widget, const fp::Led::ColorRGB& rgb)
     }
 }
 
+fp::Button::PressState Push2Device::getButtonState(const fp::Widget& w) const
+{
+    const auto pValHolder = m_buttonLayer.get(w);
+    if(!pValHolder)
+    {
+        return fp::Button::PressState::Released;
+    }
+    return pValHolder->pressState.value();
+}
 
 uint8_t Push2Device::rgb2grey(const fp::Led::ColorRGB& rgb)
 {

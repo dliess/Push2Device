@@ -36,6 +36,9 @@ bool UsbDisplay::init()
         libusb_exit(m_pContext);
         m_pContext = nullptr;
     });
+    // to make this work as non-root:
+    // create in /etc/udev/rules.d/60-push2.rules
+    // with content: SUBSYSTEM=="usb", ATTR{idProduct}=="1967", ATTR{idVendor}=="2982", MODE="0666"
     m_pDevice = libusb_open_device_with_vid_pid(m_pContext, 0x2982, 0x1967);
     if (!m_pDevice)
     {

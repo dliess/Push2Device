@@ -11,6 +11,7 @@
 #include "Push2Topology.h"
 #include "FpInputCallbackLayer.h"
 #include "FpRenderSwitch.h"
+#include "FpLedSceneHandler.h"
 
 #include <memory>
 #include <string>
@@ -45,7 +46,8 @@ class Push2Device : public fp::Button::IProvider,
                     public fp::Button3d::IProvider,
                     public fp::Encoder::IProvider,
                     public fp::TouchSurface::IProvider,
-                    public fp::Led::ISetter
+                    public fp::Led::ISetter,
+                    public fp::LedSceneHandler<Push2Device>
 {
 public:
     Push2Device();
@@ -61,12 +63,12 @@ public:
     virtual void unRegisterCB(typename fp::Encoder::CallbackIf& cb, const fp::Widget& w) override;
     virtual void unRegisterCB(typename fp::TouchSurface::CallbackIf& cb, const fp::Widget& w) override;
 
+    // TODO: should be private
     void setLed(const fp::Widget& w, const fp::Led::ColorRGB& colorRGB) override;
     
     fp::Button::PressState getButtonState(const fp::Widget& w) const;
 
     using DisplayTopology = typename fp::Push2Topology::Display;
-
 
     using ButtonLayer   = fp::InputCallbackLayer<typename fp::Push2Topology::Button>;
     using Button3dLayer = fp::InputCallbackLayer<typename fp::Push2Topology::Button3d>;

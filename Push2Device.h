@@ -47,7 +47,7 @@ class Push2Device : public fp::Button::IProvider,
                     public fp::Encoder::IProvider,
                     public fp::TouchSurface::IProvider,
                     public fp::Led::ISetter,
-                    public fp::LedSceneHandler<Push2Device, fp::Push2Topology::Led, 3>
+                    public fp::LedSceneHandler<Push2Device, fp::Push2Topology::Led, 8>
 {
 public:
     Push2Device();

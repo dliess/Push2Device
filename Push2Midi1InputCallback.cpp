@@ -491,12 +491,12 @@ void Midi1InputCallback::handleNote(double timestamp, uint8_t noteNumber, uint8_
             }
             case 9:
             {
-                w = fp::Widget(fp::Push2Topology::Encoder::eEncoderTempo);
+                w = fp::Widget(fp::Push2Topology::Encoder::eEncoderMetronome);
                 break;
             }
             case 10:
             {
-                w = fp::Widget(fp::Push2Topology::Encoder::eEncoderMetronome);
+                w = fp::Widget(fp::Push2Topology::Encoder::eEncoderTempo);
                 break;
             }
             default:

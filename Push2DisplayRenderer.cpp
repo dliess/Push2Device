@@ -21,7 +21,7 @@ DisplayRenderer::~DisplayRenderer()
 
 void DisplayRenderer::drawPixel(const gfx::Coord& coord, const ColorRGB& color)
 {
-    m_frameBuf.at(coord.x, coord.y) = color.toUint16_BRG565(coord.x, coord.y);
+    m_frameBuf.at(coord.x, coord.y) = color.toUint16_BRG565_dither(coord.x, coord.y);
 }
 
 void DisplayRenderer::streamToSubWindow(const gfx::Rectangle& subWindow,
@@ -34,7 +34,7 @@ void DisplayRenderer::streamToSubWindow(const gfx::Rectangle& subWindow,
             const gfx::Pixel x = subWindow.upperLeft.x + subX;
             const gfx::Pixel y = subWindow.upperLeft.y + subY;
             const auto streamIndex = subX + (subY * subWindow.width());
-            m_frameBuf.at(x, y) = pPixelStream[streamIndex].toUint16_BRG565(x, y);
+            m_frameBuf.at(x, y) = pPixelStream[streamIndex].toUint16_BRG565_dither(x, y);
         }
     }
 }
@@ -50,7 +50,7 @@ void DisplayRenderer::streamFromFramebuf(const gfx::Rectangle&  subWindow,
             const gfx::Pixel x = subWindow.upperLeft.x + subX;
             const gfx::Pixel y = subWindow.upperLeft.y + subY;
             const auto streamIndex = x + (y * resolution.x);
-            m_frameBuf.at(x, y) = pFrameBuf[streamIndex].toUint16_BRG565(x, y);
+            m_frameBuf.at(x, y) = pFrameBuf[streamIndex].toUint16_BRG565_dither(x, y);
         }
     }
 }

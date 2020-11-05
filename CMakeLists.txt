@@ -1,6 +1,24 @@
 cmake_minimum_required(VERSION 2.8.12)
 
+project(Push2Device)
+
 set (CMAKE_CXX_STANDARD 17)
+
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
+include(cmake/CPM.cmake)
+
+CPMFindPackage(
+  NAME Midi
+  GITHUB_REPOSITORY dliess/Midi
+  GIT_TAG 309af689b671e7958e6385f9fbd674d4c080e9ed
+)
+
+CPMFindPackage(
+  NAME FrontPanelIO
+  GITHUB_REPOSITORY dliess/FrontPanelIO
+  GIT_TAG e11986ee42dc57cc9dcb8c4a2fbbbd9229dfe301
+)
 
 add_subdirectory(Topology)
 
@@ -17,12 +35,12 @@ add_library(Push2Device STATIC
 
 target_include_directories(Push2Device PUBLIC ${CMAKE_CURRENT_LIST_DIR})
 
-target_link_libraries(Push2Device PUBLIC
-    Push2DeviceTopology
-    usbMidiPortHandling
-    midi
-    FpBase
-    FpGfx
-    FpDisplay
-    LIBUSB1::LIBUSB1
+target_link_libraries(Push2Device
+  PUBLIC Push2DeviceTopology
+  PUBLIC usbMidiPortHandling
+  PUBLIC midi
+  PUBLIC FpBase
+  PUBLIC FpGfx
+  PUBLIC FpDisplay
+  PUBLIC LIBUSB1::LIBUSB1
 )

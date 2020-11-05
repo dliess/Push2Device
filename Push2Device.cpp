@@ -1,8 +1,6 @@
 #include "Push2Device.h"
 #include "UsbMidiIn.h"
 #include "UsbMidiOut.h"
-#include "Midi1Input.h"
-#include "Midi1Output.h"
 #include "Push2Midi1InputCallback.h"
 #include "Push2DisplayRenderer.h"
 #include "FpIRenderMedium.h"
@@ -27,7 +25,7 @@ Push2Device::Push2Device() :
                 return;
             }
             m_pMidiInput.reset( new midi::Midi1Input(std::move(pMidiMedium)) );
-            m_pMidiInput->registerMidiInCb(m_pInputCallback.get());
+            m_pMidiInput->registerMidiInCbIf(m_pInputCallback.get());
         }
     });
     midi::PortNotifiers::instance().inputs.registerRemovedPortCb([this](const rtmidiadapt::DeviceOnUsbPort& devOnUsbPort){

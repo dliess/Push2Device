@@ -12,18 +12,11 @@
 #include "FpInputCallbackLayer.h"
 #include "FpRenderSwitch.h"
 #include "FpLedSceneHandler.h"
+#include "Midi1Input.h"
+#include "Midi1Output.h"
 
 #include <memory>
 #include <string>
-
-namespace midi
-{
-    class Midi1Input;
-}
-namespace midi
-{
-    class Midi1Output;
-}
 
 namespace fp
 {
@@ -79,7 +72,7 @@ public:
 
     void setGlobalLedGBrightness(uint8_t level);
 private:
-    std::unique_ptr<midi::Midi1Input>  m_pMidiInput;
+    std::unique_ptr<midi::Midi1Input<>>  m_pMidiInput;
     std::unique_ptr<midi::Midi1Output> m_pMidiOutput;
 
     std::unique_ptr<Midi1InputCallback> m_pInputCallback;

@@ -44,3 +44,8 @@ target_link_libraries(Push2Device
   PUBLIC FpDisplay
   PUBLIC LIBUSB1::LIBUSB1
 )
+
+option(__WITH_QT_ADAPTER__ "add qt adapter" ON)
+if(${__WITH_QT_ADAPTER__})
+  add_subdirectory(Qt)
+endif()

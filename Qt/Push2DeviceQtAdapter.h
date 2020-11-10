@@ -231,6 +231,8 @@ public:
    void setLed(fp::Led::ILedScene& ledScene, const QColor& color, const fp::Widget& w);
    void setLedOfBtn(fp::Led::ILedScene& ledScene, const QColor& color, const fp::Widget& w);
 
+   static void registerTypesAndObjects();
+
 private:
    push2device::Push2Device& m_rPush2Device;
    void onPressStateChange(const fp::Button::PressState& pressState, const fp::Widget& w) final;

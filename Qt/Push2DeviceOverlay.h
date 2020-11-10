@@ -43,6 +43,8 @@ public slots:
    void onSetLed(const QColor& color, Led::Id id, int x = 0, int y = 0);
    void onSetLedOfBtn(const QColor& color, Button::Id id, int x = 0, int y = 0);
 
+   static void registerTypesAndObjects();
+
 private:
    push2::qt::Push2Device* m_pPush2Device{nullptr};
    void onPressStateChange(const fp::Button::PressState& pressState, const fp::Widget& w) final;

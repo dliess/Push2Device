@@ -1,6 +1,7 @@
 #include "Push2DeviceOverlay.h"
 #include <QCoreApplication>
 #include "Push2LedOfWidget.h"
+#include <QQmlApplicationEngine>
 
 push2::qt::Push2DeviceOverlay::Push2DeviceOverlay()
 {
@@ -178,4 +179,10 @@ void push2::qt::Push2DeviceOverlay::onTouchStateChanged(fp::TouchSurface::TouchS
 void push2::qt::Push2DeviceOverlay::onPositionEvents(const fp::TouchSurface::PressData& data, const Widget& w)
 {
    emit touchSurfaceTouchPositionChanged(data.pos.x, data.pos.y, data.pressure, static_cast<TouchSurface::Id>(w.id), w.coord.x, w.coord.y);
+}
+
+void push2::qt::Push2DeviceOverlay::registerTypesAndObjects()
+{
+   qmlRegisterType<push2::qt::Push2DeviceOverlay>("push2.enums", 1, 0,
+                                                  "Push2DeviceOverlay");
 }

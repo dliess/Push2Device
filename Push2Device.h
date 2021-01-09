@@ -45,7 +45,7 @@ class Push2Device : public fp::Button::IProvider,
 public:
     Push2Device();
     ~Push2Device();  // makes std::unique_ptr happy
-    bool init(uint32_t timeoutMs);
+    [[nodiscard]] bool init(uint32_t timeoutMs);
     virtual void registerCB(typename fp::Button::CallbackIf& cb, const fp::Widget& w) override;
     virtual void registerCB(typename fp::Button3d::CallbackIf& cb, const fp::Widget& w) override;
     virtual void registerCB(typename fp::Encoder::CallbackIf& cb, const fp::Widget& w) override;

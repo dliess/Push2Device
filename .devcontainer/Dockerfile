@@ -27,10 +27,12 @@ RUN apt-get install -y \
         clang-format \
         ninja-build \
         g++ \
+        gdb \
         git \
         libasound2-dev \
         libgtest-dev \
-        libusb-1.0-0-dev
+        libusb-1.0-0-dev \
+        python
 
 # install Qt build dependencies
 RUN apt-get install -y \

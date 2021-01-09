@@ -135,8 +135,8 @@ void Push2Device::setLed(const fp::Widget& widget, const fp::Led::ColorRGB& rgb)
     }
     else if(fp::Push2Topology::Led::eTouchSurfaceLed == widget.id)
     {
-        const auto dimX = fp::Push2Topology::Led::getDim(static_cast<fp::Push2Topology::Led::Id>(widget.id)).x;
-        m_pMidiOutput->pitchBend(1, (widget.coord.x * 0x4000 / dimX) - 0x2000);
+        const auto dimX = fp::Push2Topology::Led::getDim(static_cast<fp::Push2Topology::Led::Id>(widget.id)).x - 1;
+        m_pMidiOutput->pitchBend(1, (widget.coord.x * 16320 / dimX) + 8192);
     }
     else
     {

@@ -433,7 +433,7 @@ struct TouchSurface
 
    static const gfx::Resolution &getResolution(Id widgetId)
    {
-      static const Vector2d<uint32_t> res[Id::eLast + 1] = { { 16384, 0 }} ;
+      static const Vector2d<uint32_t> res[Id::eLast + 1] = { { 256, 0 }} ;
       return res[widgetId];
    }
 };

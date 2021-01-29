@@ -45,6 +45,8 @@ public slots:
 
    static void registerTypesAndObjects();
 
+   void clear();
+
 private:
    push2::qt::Push2Device* m_pPush2Device{nullptr};
    void onPressStateChange(const fp::Button::PressState& pressState, const fp::Widget& w) final;

@@ -10,11 +10,7 @@ push2::qt::Push2DeviceOverlay::Push2DeviceOverlay()
 
 push2::qt::Push2DeviceOverlay::~Push2DeviceOverlay()
 {
-    for(auto &w : m_reservedButtons) m_pPush2Device->unRegisterCB(static_cast<fp::Button::CallbackIf&>(*this), w);
-    for(auto &w : m_reservedButton3ds) m_pPush2Device->unRegisterCB(static_cast<fp::Button3d::CallbackIf&>(*this), w);
-    for(auto &w : m_reservedEncoders) m_pPush2Device->unRegisterCB(static_cast<fp::Encoder::CallbackIf&>(*this), w);
-    for(auto &w : m_reservedTouchSurfaces) m_pPush2Device->unRegisterCB(static_cast<fp::TouchSurface::CallbackIf&>(*this), w);
-    for(auto &w : m_reservedLeds) m_pPush2Device->releaseLed(*this, w);
+    clear();
 }
 
 push2::qt::ButtonPressState::Value push2::qt::Push2DeviceOverlay::getButtonState(Button::Id id, int x, int y) const
@@ -116,6 +112,15 @@ void push2::qt::Push2DeviceOverlay::onSetLedOfBtn(const QColor& color, Button::I
 {
     const auto w = fp::Widget(id, x, y);
     m_pPush2Device->setLedOfBtn(static_cast<fp::Led::ILedScene&>(*this), color, w);
+}
+
+void push2::qt::Push2DeviceOverlay::clear()
+{
+    for(auto &w : m_reservedButtons) m_pPush2Device->unRegisterCB(static_cast<fp::Button::CallbackIf&>(*this), w);
+    for(auto &w : m_reservedButton3ds) m_pPush2Device->unRegisterCB(static_cast<fp::Button3d::CallbackIf&>(*this), w);
+    for(auto &w : m_reservedEncoders) m_pPush2Device->unRegisterCB(static_cast<fp::Encoder::CallbackIf&>(*this), w);
+    for(auto &w : m_reservedTouchSurfaces) m_pPush2Device->unRegisterCB(static_cast<fp::TouchSurface::CallbackIf&>(*this), w);
+    for(auto &w : m_reservedLeds) m_pPush2Device->releaseLed(*this, w);
 }
 
 void push2::qt::Push2DeviceOverlay::onPressStateChange(const fp::Button::PressState& pressState, const fp::Widget& w)

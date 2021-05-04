@@ -106,16 +106,16 @@ void push2::qt::Push2Device::registerTypesAndObjects()
                                     "Not creatable as it is an enum type");
    qmlRegisterUncreatableMetaObject(
       push2::qt::ButtonPressState::staticMetaObject, "push2.enums", 1, 0,
-      "ButtonPressState", "Not creatable as it is an enum type");
+      "FPButtonPressState", "Not creatable as it is an enum type");
    qmlRegisterUncreatableMetaObject(
       push2::qt::Button3dPressState::staticMetaObject, "push2.enums", 1, 0,
-      "Button3dPressState", "Not creatable as it is an enum type");
+      "FPButton3dPressState", "Not creatable as it is an enum type");
    qmlRegisterUncreatableMetaObject(
       push2::qt::EncoderTouchState::staticMetaObject, "push2.enums", 1, 0,
-      "EncoderTouchState", "Not creatable as it is an enum type");
+      "FPEncoderTouchState", "Not creatable as it is an enum type");
    qmlRegisterUncreatableMetaObject(
       push2::qt::TouchSurfaceTouchState::staticMetaObject, "push2.enums", 1, 0,
-      "TouchSurfaceTouchState", "Not creatable as it is an enum type");
+      "FPTouchSurfaceTouchState", "Not creatable as it is an enum type");
    qRegisterMetaType<push2::qt::FpWidget::Idx>("FpWidget::Idx");
    qRegisterMetaType<push2::qt::ButtonPressState::Value>(
       "ButtonPressState::Value");
@@ -127,19 +127,19 @@ void push2::qt::Push2Device::registerTypesAndObjects()
       "TouchSurfaceTouchState::Value");
 
    qmlRegisterUncreatableMetaObject(push2::qt::Led::staticMetaObject,
-                                    "push2.enums", 1, 0, "Led",
+                                    "push2.enums", 1, 0, "FPLed",
                                     "Not creatable as it is an enum type");
    qmlRegisterUncreatableMetaObject(push2::qt::Button3d::staticMetaObject,
-                                    "push2.enums", 1, 0, "Button3d",
+                                    "push2.enums", 1, 0, "FPButton3d",
                                     "Not creatable as it is an enum type");
    qmlRegisterUncreatableMetaObject(push2::qt::Button::staticMetaObject,
-                                    "push2.enums", 1, 0, "Button",
+                                    "push2.enums", 1, 0, "FPButton",
                                     "Not creatable as it is an enum type");
    qmlRegisterUncreatableMetaObject(push2::qt::Encoder::staticMetaObject,
-                                    "push2.enums", 1, 0, "Encoder",
+                                    "push2.enums", 1, 0, "FPEncoder",
                                     "Not creatable as it is an enum type");
    qmlRegisterUncreatableMetaObject(push2::qt::TouchSurface::staticMetaObject,
-                                    "push2.enums", 1, 0, "TouchSurface",
+                                    "push2.enums", 1, 0, "FPTouchSurface",
                                     "Not creatable as it is an enum type");
    qRegisterMetaType<push2::qt::Button::Id>("Button::Id");
    qRegisterMetaType<push2::qt::Button3d::Id>("Button3d::Id");

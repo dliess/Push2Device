@@ -4,6 +4,8 @@
 #include "Push2Midi1InputCallback.h"
 #include "Push2DisplayRenderer.h"
 #include "FpIRenderMedium.h"
+#include <thread>
+#include <chrono>
 
 using namespace push2device;
 
@@ -59,6 +61,8 @@ Push2Device::Push2Device() :
                 static const uint8_t GET_COLORPALETTE_ENTRY = 0x04;
                 const std::vector<uint8_t> sysexMsg = {0xF0, 0x00, 0x21, 0x1D, 0x01, 0x01, GET_COLORPALETTE_ENTRY, colorIndex, 0xF7};
                 m_pMidiOutput->sysEx(sysexMsg);
+                // ugly workaround to make shure answer sysexes arrive between get requests
+                std::this_thread::sleep_for(std::chrono::milliseconds(5)); 
             }
         }
     });

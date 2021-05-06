@@ -72,6 +72,7 @@ signals:
    void buttonReleased(Button::Id id, int x, int y);
    void button3dPressed(int velocity, Button3d::Id id, int x, int y); // TODO: "velocity" maybe float?
    void button3dReleased(int velocity, Button3d::Id id, int x, int y); // TODO: "velocity" maybe float?
+   void button3dAftertouch(int pressure, Button3d::Id id, int x, int y);
    void encoderIncrementChanged(int increment, Encoder::Id id, int x, int y);
    void encoderTouchStateChanged(EncoderTouchState::Value state, Encoder::Id id, int x, int y);
    void touchSurfaceTouchStateChanged(TouchSurfaceTouchState::Value state, TouchSurface::Id id, int x, int y);

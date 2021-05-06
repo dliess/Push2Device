@@ -163,7 +163,7 @@ void push2::qt::Push2DeviceOverlay::onPressStateChange(const fp::Button3d::State
 
 void push2::qt::Push2DeviceOverlay::onPositionEvents(const uint32_t& pressure, const Widget& w)
 {
-   // TODO ?
+   emit button3dAftertouch(pressure, static_cast<Button3d::Id>(w.id), w.coord.x, w.coord.y);
 }
 
 void push2::qt::Push2DeviceOverlay::onIncrement(int32_t data, const fp::Widget& w)

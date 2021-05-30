@@ -4,7 +4,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-find_package(Qt5 5.14.2 COMPONENTS Core Gui Quick REQUIRED)
+find_package(Qt5 5.12.8 COMPONENTS Core Gui Quick REQUIRED)
 
 set(SOURCES
     "Push2DeviceOverlay.cpp"

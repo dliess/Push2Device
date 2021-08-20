@@ -99,10 +99,10 @@ bool UsbDisplay::init()
     }
     cleanupContext.disable();
     cleanupDevice.disable();
-    if (!outThreadZmq.destination().bind("tcp://*:12342")) {
-       exit(1);
-    }
-   outThreadZmq.startThread(3000);
+    
+    MeasurerTenthMs<0>::instance().dataHolder().setHistogramRange(1000);
+    outThreadZmq.destination().bind("tcp://*:12342");
+    outThreadZmq.startThread(500);
 
     return true;
 }

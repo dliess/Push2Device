@@ -21,7 +21,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
 # Package installs
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
 	sudo \
         cmake \
         clang-format \
@@ -32,24 +32,25 @@ RUN apt-get install -y \
         libasound2-dev \
         libgtest-dev \
         libusb-1.0-0-dev \
-        python
+        python \
+        && rm -rf /var/lib/apt/lists/*
 
 # install Qt build dependencies
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
         qtbase5-dev \
-        qtdeclarative5-dev
+        qtdeclarative5-dev \
+        && rm -rf /var/lib/apt/lists/*
 
 # some utilities for runtime
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
         vim \
         feedgnuplot \
         netcat \
         zsh \
-        curl
+        curl \
+        && rm -rf /var/lib/apt/lists/*
 
 #RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-RUN rm -rf /var/lib/apt/lists/*
 
 # Create group and user
 RUN groupadd --gid=$GID $BUILD_USER

@@ -2,6 +2,25 @@
 #include "FinalAction.h"
 #include <iostream>
 
+// ----- Time measuring -----
+#include "CyclicDataOutputterThread.h"
+#include "Histogram.h"
+#include "Measurer.h"
+#include "OutputterDestinationsZmq.h"
+using TenthMs = std::chrono::duration<int, std::ratio<1, 10000>>;
+using DataHolderTenthMs = TimeMeasure::Histogram<TenthMs>;
+
+template <unsigned int Id>
+using MeasurerTenthMs = TimeMeasure::Measurer<Id, DataHolderTenthMs>;
+
+TimeMeasure::CyclicDataOutputterThread<DataHolderTenthMs,
+                                       TimeMeasure::Destination::Zmq>
+    outThreadZmq({
+        &MeasurerTenthMs<0>::instance().dataHolder()
+    });
+// --------------------------
+
+
 using namespace push2device;
 
 UsbDisplay::UsbDisplay() :
@@ -80,6 +99,11 @@ bool UsbDisplay::init()
     }
     cleanupContext.disable();
     cleanupDevice.disable();
+    if (!outThreadZmq.destination().bind("tcp://*:12342")) {
+       exit(1);
+    }
+   outThreadZmq.startThread(3000);
+
     return true;
 }
 
@@ -87,6 +111,7 @@ bool UsbDisplay::init()
 #include <cassert>
 bool UsbDisplay::sendFrameToDisplay(const FrameBuffer<uint16_t>& frameBuffer)
 {
+    MeasurerTenthMs<0>::Guard guard;
     static uint8_t header[] = { 0xEF, 0xCD, 0xAB, 0x89, 0x00, 0x00, 0x00, 0x00,
                                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
     int transferred = 0;

@@ -20,6 +20,12 @@ CPMFindPackage(
   GIT_TAG e11986ee42dc57cc9dcb8c4a2fbbbd9229dfe301
 )
 
+CPMAddPackage(
+  NAME timemeasure
+  GITHUB_REPOSITORY dliess/TimeMeasure
+  GIT_TAG develop
+)
+
 add_subdirectory(Topology)
 add_subdirectory(Test EXCLUDE_FROM_ALL)
 
@@ -44,6 +50,7 @@ target_link_libraries(Push2Device
   PUBLIC FpGfx
   PUBLIC FpDisplay
   PUBLIC LIBUSB1::LIBUSB1
+  PRIVATE TimeMeasure
 )
 
 option(__WITH_QT_ADAPTER__ "add qt adapter" ON)

@@ -44,6 +44,7 @@ RUN apt-get update && apt-get install -y \
 # some utilities for runtime
 RUN apt-get update && apt-get install -y \
         vim \
+        libzmq3-dev \
         feedgnuplot \
         netcat \
         zsh \

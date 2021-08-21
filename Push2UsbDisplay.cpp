@@ -16,7 +16,8 @@ using MeasurerTenthMs = TimeMeasure::Measurer<Id, DataHolderTenthMs>;
 TimeMeasure::CyclicDataOutputterThread<DataHolderTenthMs,
                                        TimeMeasure::Destination::Zmq>
     outThreadZmq({
-        &MeasurerTenthMs<0>::instance().dataHolder()
+        &MeasurerTenthMs<0>::instance().dataHolder(),
+        &MeasurerTenthMs<1>::instance().dataHolder()
     });
 // --------------------------
 
@@ -101,6 +102,7 @@ bool UsbDisplay::init()
     cleanupDevice.disable();
     
     MeasurerTenthMs<0>::instance().dataHolder().setHistogramRange(1000);
+    MeasurerTenthMs<1>::instance().dataHolder().setHistogramRange(1000);
     outThreadZmq.destination().bind("tcp://*:12342");
     outThreadZmq.startThread(500);
 
@@ -111,6 +113,7 @@ bool UsbDisplay::init()
 #include <cassert>
 bool UsbDisplay::sendFrameToDisplay(const FrameBuffer<uint16_t>& frameBuffer)
 {
+    MeasurerTenthMs<1>::instance().sample();
     MeasurerTenthMs<0>::Guard guard;
     static uint8_t header[] = { 0xEF, 0xCD, 0xAB, 0x89, 0x00, 0x00, 0x00, 0x00,
                                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };

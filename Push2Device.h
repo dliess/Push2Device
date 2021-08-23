@@ -60,6 +60,7 @@ public:
     void setLed(const fp::Widget& w, const fp::Led::ColorRGB& colorRGB) override;
     
     fp::Button::PressState getButtonState(const fp::Widget& w) const;
+    fp::Encoder::TouchState getEncoderTouchState(const fp::Widget& w) const;
 
     using DisplayTopology = typename fp::Push2Topology::Display;
 

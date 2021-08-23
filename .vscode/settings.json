@@ -7,6 +7,10 @@
         "numeric": "cpp",
         "ostream": "cpp",
         "sstream": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "limits": "cpp",
+        "memory": "cpp",
+        "optional": "cpp",
+        "type_traits": "cpp"
     }
 }

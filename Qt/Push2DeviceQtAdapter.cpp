@@ -235,3 +235,8 @@ push2::qt::ButtonPressState::Value push2::qt::Push2Device::getButtonState(Button
 {
    return static_cast<ButtonPressState::Value>(m_rPush2Device.getButtonState(fp::Widget(id, x, y)));
 }
+
+push2::qt::EncoderTouchState::Value push2::qt::Push2Device::getEncoderTouchState(Encoder::Id id, int x, int y) const
+{
+   return static_cast<EncoderTouchState::Value>(m_rPush2Device.getEncoderTouchState(fp::Widget(id, x, y)));
+}

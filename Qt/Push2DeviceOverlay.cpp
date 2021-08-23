@@ -18,6 +18,11 @@ push2::qt::ButtonPressState::Value push2::qt::Push2DeviceOverlay::getButtonState
     return m_pPush2Device->getButtonState(id, x, y);
 }
 
+push2::qt::EncoderTouchState::Value push2::qt::Push2DeviceOverlay::getEncoderTouchState(Encoder::Id id, int x, int y) const
+{
+    return m_pPush2Device->getEncoderTouchState(id, x, y);
+}
+
 void push2::qt::Push2DeviceOverlay::onReserveButton(Button::Id id, int x, int y)
 {
     const auto w = fp::Widget(id, x, y);

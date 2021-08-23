@@ -211,6 +211,16 @@ fp::Button::PressState Push2Device::getButtonState(const fp::Widget& w) const
     return pValHolder->pressState.value();
 }
 
+fp::Encoder::TouchState Push2Device::getEncoderTouchState(const fp::Widget& w) const
+{
+    const auto pValHolder = m_encoderLayer.get(w);
+    if(!pValHolder)
+    {
+        return fp::Encoder::TouchState::Released;
+    }
+    return pValHolder->touchState.value();
+}
+
 uint8_t Push2Device::rgb2grey(const fp::Led::ColorRGB& rgb)
 {
     return (rgb.r + rgb.g + rgb.b) / 6;

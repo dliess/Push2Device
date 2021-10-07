@@ -26,6 +26,7 @@ public:
    ~Push2DeviceOverlay();
    Q_INVOKABLE ButtonPressState::Value getButtonState(Button::Id id, int x = 0, int y = 0) const;
    Q_INVOKABLE EncoderTouchState::Value getEncoderTouchState(Encoder::Id id, int x = 0, int y = 0) const;
+   Q_INVOKABLE void setEncoderDivider(unsigned int divider, Encoder::Id id, int x = 0, int y = 0) const;
 public slots:
    void onReserveButton(Button::Id id, int x = 0, int y = 0);
    void onReserveButton3d(Button3d::Id id, int x = 0, int y = 0);

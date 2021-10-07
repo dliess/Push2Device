@@ -221,6 +221,13 @@ fp::Encoder::TouchState Push2Device::getEncoderTouchState(const fp::Widget& w) c
     return pValHolder->touchState.value();
 }
 
+void Push2Device::setEncoderDivider(const fp::Widget& w, unsigned int divider) noexcept
+{
+    m_encoderLayer.forWidgetValueDo(w, [divider](fp::Encoder::ValueHolder& vh, const fp::Widget& w){
+        vh.increments.setDivider(divider);
+    });
+}
+
 uint8_t Push2Device::rgb2grey(const fp::Led::ColorRGB& rgb)
 {
     return (rgb.r + rgb.g + rgb.b) / 6;

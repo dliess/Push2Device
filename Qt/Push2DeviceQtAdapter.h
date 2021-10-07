@@ -254,6 +254,7 @@ public slots:
 public:
    Q_INVOKABLE ButtonPressState::Value getButtonState(Button::Id id, int x = 0, int y = 0) const;
    Q_INVOKABLE EncoderTouchState::Value getEncoderTouchState(Encoder::Id id, int x = 0, int y = 0) const;
+   Q_INVOKABLE void setEncoderDivider(unsigned int divider, Encoder::Id id, int x = 0, int y = 0) const;
 
 signals:
    void buttonPressStateChange(ButtonPressState::Value pressState, Button::Id id, int x, int y);

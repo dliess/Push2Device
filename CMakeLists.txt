@@ -17,7 +17,7 @@ CPMFindPackage(
 CPMFindPackage(
   NAME FrontPanelIO
   GITHUB_REPOSITORY dliess/FrontPanelIO
-  GIT_TAG e11986ee42dc57cc9dcb8c4a2fbbbd9229dfe301
+  GIT_TAG 6c14871171aba40bcd7c0583d24cbe9edb9e2b9e
 )
 
 CPMAddPackage(

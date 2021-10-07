@@ -240,3 +240,8 @@ push2::qt::EncoderTouchState::Value push2::qt::Push2Device::getEncoderTouchState
 {
    return static_cast<EncoderTouchState::Value>(m_rPush2Device.getEncoderTouchState(fp::Widget(id, x, y)));
 }
+
+void push2::qt::Push2Device::setEncoderDivider(unsigned int divider, Encoder::Id id, int x, int y) const
+{
+   m_rPush2Device.setEncoderDivider(fp::Widget(id, x, y), divider);
+}

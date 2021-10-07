@@ -61,6 +61,7 @@ public:
     
     fp::Button::PressState getButtonState(const fp::Widget& w) const;
     fp::Encoder::TouchState getEncoderTouchState(const fp::Widget& w) const;
+    void setEncoderDivider(const fp::Widget& w, unsigned int divider) noexcept;
 
     using DisplayTopology = typename fp::Push2Topology::Display;
 

@@ -23,6 +23,11 @@ push2::qt::EncoderTouchState::Value push2::qt::Push2DeviceOverlay::getEncoderTou
     return m_pPush2Device->getEncoderTouchState(id, x, y);
 }
 
+void push2::qt::Push2DeviceOverlay::setEncoderDivider(unsigned int divider, Encoder::Id id, int x, int y) const
+{
+    m_pPush2Device->setEncoderDivider(divider, id, x, y);
+}
+
 void push2::qt::Push2DeviceOverlay::onReserveButton(Button::Id id, int x, int y)
 {
     const auto w = fp::Widget(id, x, y);

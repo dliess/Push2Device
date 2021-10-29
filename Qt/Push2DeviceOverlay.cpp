@@ -196,6 +196,16 @@ void push2::qt::Push2DeviceOverlay::onPositionEvents(const fp::TouchSurface::Pre
    emit touchSurfaceTouchPositionChanged(data.pos.x, data.pos.y, data.pressure, static_cast<TouchSurface::Id>(w.id), w.coord.x, w.coord.y);
 }
 
+void push2::qt::Push2DeviceOverlay::onLedGotRevealed(const fp::Widget& w)
+{
+   emit ledGotRevealed(static_cast<Led::Id>(w.id), w.coord.x, w.coord.y);
+}
+
+void push2::qt::Push2DeviceOverlay::onLedGotHidden(const fp::Widget& w)
+{
+    emit ledGotHidden(static_cast<Led::Id>(w.id), w.coord.x, w.coord.y);
+}
+
 void push2::qt::Push2DeviceOverlay::registerTypesAndObjects()
 {
    qmlRegisterType<push2::qt::Push2DeviceOverlay>("push2.enums", 1, 0,

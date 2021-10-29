@@ -242,8 +242,8 @@ private:
    void onTouchStateChanged(fp::Encoder::TouchState touchState, const fp::Widget& w) final;
    void onTouchStateChanged(fp::TouchSurface::TouchState touchState, const Widget& w) final;
    void onPositionEvents(const fp::TouchSurface::PressData& data, const Widget& w) final;
-   void onGotRevealed(const Widget& w) final {};
-   void onGotHidden(const Widget& w) final {};
+   void onLedGotRevealed(const Widget& w) final;
+   void onLedGotHidden(const Widget& w) final;
 
 public slots:
    void onReserveLed(const QColor& color, Led::Id id, int x = 0, int y = 0);
@@ -267,6 +267,8 @@ signals:
    void encoderTouchStateChanged(EncoderTouchState::Value state, Encoder::Id id, int x, int y);
    void touchSurfaceTouchStateChanged(TouchSurfaceTouchState::Value state, TouchSurface::Id id, int x, int y);
    void touchSurfaceTouchPositionChanged(int posX, int posY, int pressure, TouchSurface::Id id, int x, int y); // TODO: maybe float?
+   void ledGotRevealed(Led::Id id, int x, int y);
+   void ledGotHidden(Led::Id id, int x, int y);
 };
 
 

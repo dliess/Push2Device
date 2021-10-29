@@ -191,6 +191,16 @@ void push2::qt::Push2Device::onPositionEvents(const uint32_t& pressure, const Wi
    // TODO ?
 }
 
+void push2::qt::Push2Device::onLedGotRevealed(const Widget& w)
+{
+   emit ledGotRevealed(static_cast<Led::Id>(w.id), w.coord.x, w.coord.y);
+}
+
+void push2::qt::Push2Device::onLedGotHidden(const Widget& w)
+{
+   emit ledGotHidden(static_cast<Led::Id>(w.id), w.coord.x, w.coord.y);
+}
+
 void push2::qt::Push2Device::onIncrement(int32_t data, const fp::Widget& w)
 {
    emit encoderIncrementChanged(data, static_cast<Encoder::Id>(w.id), w.coord.x, w.coord.y);

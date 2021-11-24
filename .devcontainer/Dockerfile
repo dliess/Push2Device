@@ -31,6 +31,7 @@ RUN apt-get update && apt-get install -y \
         git \
         libasound2-dev \
         libgtest-dev \
+        libgmock-dev \
         libusb-1.0-0-dev \
         python \
         && rm -rf /var/lib/apt/lists/*

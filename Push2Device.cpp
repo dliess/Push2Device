@@ -27,6 +27,7 @@ Push2Device::Push2Device() :
                 return;
             }
             m_pMidiInput.reset( new midi::Midi1Input(std::move(pMidiMedium)) );
+            m_pMidiInput->disableXRPN();
             m_pMidiInput->registerMidiInCbIf(m_pInputCallback.get());
         }
     });

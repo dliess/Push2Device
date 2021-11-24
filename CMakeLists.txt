@@ -11,7 +11,7 @@ include(cmake/CPM.cmake)
 CPMFindPackage(
   NAME Midi
   GITHUB_REPOSITORY dliess/Midi
-  GIT_TAG 284372a58ad8b7823100ff493cb4feba16e695d5
+  GIT_TAG afb97d79d9e6f846a8093a389e62301812d54c04
 )
 
 CPMFindPackage(

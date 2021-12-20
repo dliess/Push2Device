@@ -103,8 +103,8 @@ bool UsbDisplay::init()
     
     MeasurerTenthMs<0>::instance().dataHolder().setHistogramRange(1000);
     MeasurerTenthMs<1>::instance().dataHolder().setHistogramRange(1000);
-    outThreadZmq.destination().bind("tcp://*:12342");
-    outThreadZmq.startThread(500);
+    //outThreadZmq.destination().bind("tcp://*:12342");
+    //outThreadZmq.startThread(500);
 
     return true;
 }

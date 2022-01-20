@@ -2,6 +2,7 @@
 #include "FinalAction.h"
 #include <iostream>
 
+/*
 // ----- Time measuring -----
 #include "CyclicDataOutputterThread.h"
 #include "Histogram.h"
@@ -20,7 +21,7 @@ TimeMeasure::CyclicDataOutputterThread<DataHolderTenthMs,
         &MeasurerTenthMs<1>::instance().dataHolder()
     });
 // --------------------------
-
+*/
 
 using namespace push2device;
 
@@ -101,8 +102,8 @@ bool UsbDisplay::init()
     cleanupContext.disable();
     cleanupDevice.disable();
     
-    MeasurerTenthMs<0>::instance().dataHolder().setHistogramRange(1000);
-    MeasurerTenthMs<1>::instance().dataHolder().setHistogramRange(1000);
+    //MeasurerTenthMs<0>::instance().dataHolder().setHistogramRange(1000);
+    //MeasurerTenthMs<1>::instance().dataHolder().setHistogramRange(1000);
     //outThreadZmq.destination().bind("tcp://*:12342");
     //outThreadZmq.startThread(500);
 
@@ -113,8 +114,8 @@ bool UsbDisplay::init()
 #include <cassert>
 bool UsbDisplay::sendFrameToDisplay(const FrameBuffer<uint16_t>& frameBuffer)
 {
-    MeasurerTenthMs<1>::instance().sample();
-    MeasurerTenthMs<0>::Guard guard;
+    //MeasurerTenthMs<1>::instance().sample();
+    //MeasurerTenthMs<0>::Guard guard;
     static uint8_t header[] = { 0xEF, 0xCD, 0xAB, 0x89, 0x00, 0x00, 0x00, 0x00,
                                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
     int transferred = 0;

@@ -49,6 +49,7 @@ RUN apt-get update && apt-get install -y \
         feedgnuplot \
         netcat \
         zsh \
+        wget \
         curl \
         && rm -rf /var/lib/apt/lists/*
 
@@ -63,6 +64,8 @@ RUN usermod -aG sudo $BUILD_USER
 USER $BUILD_USER
 WORKDIR /home/$BUILD_USER
 
+RUN wget -qO- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | zsh || true
+RUN sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="gentoo"/g' ~/.zshrc
 
 
 

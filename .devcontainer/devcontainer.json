@@ -7,7 +7,8 @@
      "--group-add", "audio"
    ],
    "settings": { 
-      "terminal.integrated.shell.linux": "/bin/bash"
+      "terminal.integrated.shell.linux": "/bin/zsh",
+      "terminal.integrated.detectLocale": "off"
    },
    "mounts": [
       "type=bind,source=/dev,target=/dev",

@@ -1,0 +1,11 @@
+get_filename_component(Push2Device_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+include(CMakeFindDependencyMacro)
+
+find_dependency(midi REQUIRED)
+find_dependency(FrontPanelIO REQUIRED)
+find_dependency(TimeMeasure REQUIRED)
+@FIND_QT_DEPENDENCIES@
+
+if(NOT TARGET Push2Device::Push2Device)
+    include("${Push2Device_CMAKE_DIR}/@PROJECT_NAME@-targets.cmake")
+endif()

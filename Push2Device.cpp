@@ -6,6 +6,7 @@
 #include "FpIRenderMedium.h"
 #include "Push2DisplayRenderer.h"
 #include "Push2Midi1InputCallback.h"
+#include "UsbMidiPortNotifier.h"
 #include "UsbMidiIn.h"
 #include "UsbMidiOut.h"
 

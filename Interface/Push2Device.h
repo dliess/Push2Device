@@ -1,7 +1,6 @@
 #ifndef PUSH_2_DEVICE_H
 #define PUSH_2_DEVICE_H
 
-#include "UsbMidiPortNotifier.h"
 #include "Push2LedColorMap.h"
 #include "FpButton.h"
 #include "FpButton3d.h"

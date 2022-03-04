@@ -16,13 +16,27 @@ set(HEADERS
     "Push2DeviceQtAdapter.h"
 )
 
-add_library(Push2DeviceQt STATIC ${SOURCES} ${HEADERS})
+set(TARGET_NAME "Push2DeviceQt")
 
-target_include_directories(Push2DeviceQt PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+add_library(${TARGET_NAME} STATIC ${SOURCES} ${HEADERS})
 
-target_link_libraries(Push2DeviceQt
+target_include_directories(${TARGET_NAME}
+  PUBLIC
+    "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
+    "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}>"
+)
+
+target_link_libraries(${TARGET_NAME}
   PUBLIC Qt5::Core
   PUBLIC Qt5::Gui
   PRIVATE Qt5::Quick
   PUBLIC Push2Device
+)
+
+set_target_properties(${TARGET_NAME} PROPERTIES
+    PUBLIC_HEADER "${HEADERS}"
+)
+
+install(TARGETS ${TARGET_NAME}  EXPORT ${PROJECT_NAME}-targets
+    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}
 )

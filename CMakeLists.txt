@@ -120,7 +120,3 @@ install(FILES
            "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config-version.cmake" 
         DESTINATION 
            "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}")
-
-
-install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Findlibusb-1.0.cmake"
-        DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}")

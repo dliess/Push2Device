@@ -11,7 +11,7 @@ add_custom_command(
     COMMENT "Generating Widget-Topology header"
     DEPENDS ${TOPOLOGY_SOURCE_JSON})
 
-add_custom_target(generateTopologyHeader DEPENDS "${TOPOLOGY_GENERATED_HEADER}" "${TOPOLOGY_CODE_GEN_TOOL}")
+#add_custom_target(generateTopologyHeader DEPENDS "${TOPOLOGY_GENERATED_HEADER}" "${TOPOLOGY_CODE_GEN_TOOL}")
 
 set(TARGET_NAME "Push2DeviceTopology")
 

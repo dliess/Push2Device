@@ -4,7 +4,8 @@
 		"dockerfile": "Dockerfile"
    },
    "runArgs" : ["--privileged",
-     "--group-add", "audio"
+      "--network=host",
+      "--group-add", "audio"
    ],
    "settings": { 
       "terminal.integrated.shell.linux": "/bin/zsh",
@@ -13,7 +14,8 @@
    "mounts": [
       "type=bind,source=/dev,target=/dev",
       "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached",
-      "source=${localEnv:HOME}/.Xauthority,target=/home/build-user/.Xauthority,type=bind,consistency=cached"
+      "source=${localEnv:HOME}/.Xauthority,target=/home/build-user/.Xauthority,type=bind,consistency=cached",
+      "type=bind,source=${env:HOME}/.ssh,target=/home/build-user/.ssh"
    ],
    "extensions": [
       "eamodio.gitlens",

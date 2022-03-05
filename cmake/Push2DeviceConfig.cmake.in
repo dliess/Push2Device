@@ -4,6 +4,7 @@ include(CMakeFindDependencyMacro)
 find_dependency(midi REQUIRED)
 find_dependency(FrontPanelIO REQUIRED)
 find_dependency(TimeMeasure REQUIRED)
+find_dependency(libusb-1.0 REQUIRED)
 @FIND_QT_DEPENDENCIES@
 
 if(NOT TARGET Push2Device::Push2Device)

@@ -46,7 +46,6 @@ endif()
 add_subdirectory(Topology)
 add_subdirectory(Test EXCLUDE_FROM_ALL)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_LIST_DIR}")
 find_package(libusb-1.0 REQUIRED)
 
 set(TARGET_NAME ${PROJECT_NAME})
@@ -121,3 +120,7 @@ install(FILES
            "${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config-version.cmake" 
         DESTINATION 
            "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}")
+
+
+install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Findlibusb-1.0.cmake"
+        DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}")

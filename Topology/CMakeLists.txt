@@ -22,8 +22,8 @@ target_include_directories(${TARGET_NAME}
         "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}>"
 )
 target_link_libraries(${TARGET_NAME}
-    INTERFACE FpBase
-    INTERFACE FpGfx
+    INTERFACE FrontPanelIO::FpBase
+    INTERFACE FrontPanelIO::FpGfx
 )
 #add_dependencies(${TARGET_NAME} generateTopologyHeader)
 

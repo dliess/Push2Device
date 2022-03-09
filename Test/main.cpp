@@ -3,6 +3,7 @@
 #include <thread> // std::this_thread::sleep_for
 
 #include "Push2Device.h"
+#include <UsbMidiPortNotifier.h>
 
 struct TouchStripCB : public fp::TouchSurface::CallbackIf
 {

@@ -3,5 +3,6 @@ add_executable(Push2DeviceTest
 )
 
 target_link_libraries(Push2DeviceTest
-  Push2Device
+  PRIVATE Push2Device
+  PRIVATE MIDI::usbMidiPortHandling
 )

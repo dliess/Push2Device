@@ -88,8 +88,8 @@ private:
     std::unique_ptr<DisplayRenderer>                             m_pDisplayRenderer;
     std::unique_ptr<fp::FrameBufRendererMedium<DisplayRenderer>> m_pFrameBufRenderer;
 
-    static const std::string PUSH2_USB_MIDI_DEVICE_LEGACY_NAME;
-    static const std::string PUSH2_USB_MIDI_DEVICE_NAME;
+    static const std::string PUSH2_USB_MIDI_DEVICE_PORT_LEGACY_NAME;
+    static const std::string PUSH2_USB_MIDI_DEVICE_POR_NAME;
 
     static uint8_t rgb2grey(const fp::Led::ColorRGB& rgb);
     uint8_t rgb2index(const fp::Led::ColorRGB& rgb) const;

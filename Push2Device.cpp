@@ -12,9 +12,9 @@
 
 using namespace push2device;
 
-const std::string Push2Device::PUSH2_USB_MIDI_DEVICE_LEGACY_NAME =
+const std::string Push2Device::PUSH2_USB_MIDI_DEVICE_PORT_LEGACY_NAME =
    "Ableton Push 2:Ableton Push 2 MIDI 1";
-const std::string Push2Device::PUSH2_USB_MIDI_DEVICE_NAME =
+const std::string Push2Device::PUSH2_USB_MIDI_DEVICE_POR_NAME =
    "Ableton Push 2:Ableton Push 2 Live Port";
 
 Push2Device::Push2Device() :
@@ -28,9 +28,9 @@ Push2Device::Push2Device() :
    midi::PortNotifiers::instance().inputs.registerNewPortCb(
       [this](rtmidiadapt::PortIndex i,
              const rtmidiadapt::DeviceOnUsbPort& devOnUsbPort) {
-         if (PUSH2_USB_MIDI_DEVICE_LEGACY_NAME ==
-                devOnUsbPort.getDeviceName() ||
-             PUSH2_USB_MIDI_DEVICE_NAME == devOnUsbPort.getDeviceName())
+         if (PUSH2_USB_MIDI_DEVICE_PORT_LEGACY_NAME ==
+                devOnUsbPort.getFullMidiPort() ||
+             PUSH2_USB_MIDI_DEVICE_POR_NAME == devOnUsbPort.getFullMidiPort())
          {
             std::cout << "New input " << i << " : " << devOnUsbPort
                       << std::endl;
@@ -46,9 +46,9 @@ Push2Device::Push2Device() :
       });
    midi::PortNotifiers::instance().inputs.registerRemovedPortCb(
       [this](const rtmidiadapt::DeviceOnUsbPort& devOnUsbPort) {
-         if (PUSH2_USB_MIDI_DEVICE_LEGACY_NAME ==
-                devOnUsbPort.getDeviceName() ||
-             PUSH2_USB_MIDI_DEVICE_NAME == devOnUsbPort.getDeviceName())
+         if (PUSH2_USB_MIDI_DEVICE_PORT_LEGACY_NAME ==
+                devOnUsbPort.getFullMidiPort() ||
+             PUSH2_USB_MIDI_DEVICE_POR_NAME == devOnUsbPort.getFullMidiPort())
          {
             std::cout << "Removed input " << devOnUsbPort << std::endl;
             m_pMidiInput.reset();
@@ -57,9 +57,9 @@ Push2Device::Push2Device() :
    midi::PortNotifiers::instance().outputs.registerNewPortCb(
       [this](rtmidiadapt::PortIndex i,
              const rtmidiadapt::DeviceOnUsbPort& devOnUsbPort) {
-         if (PUSH2_USB_MIDI_DEVICE_LEGACY_NAME ==
-                devOnUsbPort.getDeviceName() ||
-             PUSH2_USB_MIDI_DEVICE_NAME == devOnUsbPort.getDeviceName())
+         if (PUSH2_USB_MIDI_DEVICE_PORT_LEGACY_NAME ==
+                devOnUsbPort.getFullMidiPort() ||
+             PUSH2_USB_MIDI_DEVICE_POR_NAME == devOnUsbPort.getFullMidiPort())
          {
             std::cout << "New output " << i << " : " << devOnUsbPort
                       << std::endl;
@@ -107,9 +107,9 @@ Push2Device::Push2Device() :
       });
    midi::PortNotifiers::instance().outputs.registerRemovedPortCb(
       [this](const rtmidiadapt::DeviceOnUsbPort& devOnUsbPort) {
-         if (PUSH2_USB_MIDI_DEVICE_LEGACY_NAME ==
-                devOnUsbPort.getDeviceName() ||
-             PUSH2_USB_MIDI_DEVICE_NAME == devOnUsbPort.getDeviceName())
+         if (PUSH2_USB_MIDI_DEVICE_PORT_LEGACY_NAME ==
+                devOnUsbPort.getFullMidiPort() ||
+             PUSH2_USB_MIDI_DEVICE_POR_NAME == devOnUsbPort.getFullMidiPort())
          {
             std::cout << "Removed output " << devOnUsbPort << std::endl;
             m_pMidiOutput.reset();

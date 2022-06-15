@@ -15,7 +15,7 @@ struct TouchStripCB : public fp::TouchSurface::CallbackIf
    void onPositionEvents(const fp::TouchSurface::PressData& data,
                          const fp::Widget& w) override
    {
-      std::cout << "onPositionEvents: pos" << data.pos.x << " pressure: " << data.pressure << "\n";
+      std::cout << "onPositionEvents - position: " << data.pos.x << " pressure: " << data.pressure << "\n";
    }
 };
 
@@ -46,19 +46,22 @@ int main()
 
       std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
-      for (uint8_t x = 0; x < fp::Push2Topology::Led::getDim(
-                                 fp::Push2Topology::Led::eTouchSurfaceLed)
-                                 .x;
-           ++x)
+      while(true)
       {
-         push2Device.setLed({fp::Push2Topology::Led::eTouchSurfaceLed, {x, 0}},
-                            fp::Led::getRGB(fp::Led::White));
-         push2Device.setLed(
-            {fp::Push2Topology::Led::eBtnSilLed,
-             {static_cast<uint8_t>(x % 8), static_cast<uint8_t>(x / 8)}},
-            fp::Led::getRGB(fp::Led::DarkBlue));
+         for (uint8_t x = 0; x < fp::Push2Topology::Led::getDim(
+                                    fp::Push2Topology::Led::eTouchSurfaceLed)
+                                    .x;
+            ++x)
+         {
+            push2Device.setLed({fp::Push2Topology::Led::eTouchSurfaceLed, {x, 0}},
+                              fp::Led::getRGB(fp::Led::White));
+            push2Device.setLed(
+               {fp::Push2Topology::Led::eBtnSilLed,
+               {static_cast<uint8_t>(x % 8), static_cast<uint8_t>(x / 8)}},
+               fp::Led::getRGB(fp::Led::DarkBlue));
 
-         std::this_thread::sleep_for(std::chrono::milliseconds(500));
+            std::this_thread::sleep_for(std::chrono::milliseconds(500));
+         }
       }
       return 0;
    }

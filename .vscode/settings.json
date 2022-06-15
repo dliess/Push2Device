@@ -1,4 +1,6 @@
 {
+    "cmake.buildDirectory": "${workspaceRoot}/build/${buildKit}_${buildType}",
+    "cmake.installPrefix": "${workspaceRoot}/build/${buildKit}_${buildType}/_INSTALL",
     "files.associations": {
         "*.tcc": "cpp",
         "unordered_map": "cpp",
@@ -11,6 +13,14 @@
         "limits": "cpp",
         "memory": "cpp",
         "optional": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "array": "cpp",
+        "future": "cpp",
+        "ranges": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp",
+        "variant": "cpp",
+        "format": "cpp"
     }
 }

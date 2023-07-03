@@ -193,7 +193,7 @@ void Push2Device::setLed(const fp::Widget& widget, const fp::Led::ColorRGB& rgb)
                            static_cast<fp::Push2Topology::Led::Id>(widget.id))
                            .x -
                         1;
-      m_pMidiOutput->pitchBend(1, (widget.coord.x * 16320 / dimX) + 8192);
+      m_pMidiOutput->pitchBend(1, (2.0f * float(widget.coord.x)  / dimX) - 1.0f);
    }
    else
    {

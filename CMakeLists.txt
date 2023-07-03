@@ -34,14 +34,14 @@ if(FrontPanelIO_ADDED)
   add_library(FrontPanelIO::FpDisplay ALIAS FpDisplay)
 endif()
 
-CPMAddPackage(
-  NAME TimeMeasure
-  GITHUB_REPOSITORY dliess/TimeMeasure
-  GIT_TAG develop
-)
-if(TimeMeasure_ADDED)
-  add_library(TimeMeasure::TimeMeasure ALIAS TimeMeasure)
-endif()
+#CPMAddPackage(
+#  NAME TimeMeasure
+#  GITHUB_REPOSITORY dliess/TimeMeasure
+#  GIT_TAG develop
+#)
+#if(TimeMeasure_ADDED)
+#  add_library(TimeMeasure::TimeMeasure ALIAS TimeMeasure)
+#endif()
 
 add_subdirectory(Topology)
 add_subdirectory(Test EXCLUDE_FROM_ALL)
@@ -87,7 +87,7 @@ target_link_libraries(${TARGET_NAME}
   PUBLIC FrontPanelIO::FpGfx
   PUBLIC FrontPanelIO::FpDisplay
   PRIVATE LIBUSB1::LIBUSB1
-  PRIVATE TimeMeasure::TimeMeasure
+  #PRIVATE TimeMeasure::TimeMeasure
 )
 
 set(FIND_QT_DEPENDENCIES "")

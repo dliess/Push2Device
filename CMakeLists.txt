@@ -12,10 +12,14 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 include(cmake/CPM.cmake)
 
+option (USE_MPARK_VARIANT "use mpark variant" ON)
+
 CPMFindPackage(
   NAME midi
   GITHUB_REPOSITORY dliess/Midi
   GIT_TAG master
+  OPTIONS
+    "USE_MPARK_VARIANT ${USE_MPARK_VARIANT}"
 )
 if(midi_ADDED)
   add_library(MIDI::midi ALIAS midi)
